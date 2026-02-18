@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact SkyLink Broadband for independent third-party assistance with your internet and cable issues. Call us or send a message.">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📞</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📞</text></svg>">
+    <title>Contact Us | SkyLink Broadband</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            padding: 80px 0;
+        }
+        
+        .contact-hero-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 32px;
+        }
+        
+        .contact-info {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .contact-form-wrapper {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+        
+        .contact-method {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            transition: var(--transition-smooth);
+        }
+        
+        .contact-method:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(230, 182, 92, 0.3);
+            transform: translateY(-4px);
+        }
+        
+        .contact-method-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, rgba(230, 182, 92, 0.1), rgba(255, 215, 119, 0.1));
+            border: 1px solid rgba(230, 182, 92, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--gold-primary);
+        }
+        
+        .contact-method h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--white);
+        }
+        
+        .contact-method p {
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+        
+        .contact-method a {
+            color: var(--gold-primary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        
+        .contact-method a:hover {
+            color: var(--gold-glow);
+        }
+        
+        .contact-form {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 14px 16px;
+            color: var(--white);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: var(--transition-smooth);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-group input.error,
+        .form-group textarea.error {
+            border-color: #ff6b6b;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-glow));
+            color: var(--dark-bg);
+            border: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(230, 182, 92, 0.4);
+        }
+        
+        .form-disclaimer {
+            font-size: 0.875rem;
+            color: var(--muted-text);
+            margin-top: 16px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px 0;
+            }
+            
+            .contact-form {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <span class="top-bar-item">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M8 4V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="8" cy="11" r="0.5" fill="currentColor"/>
+                    </svg>
+                    Independent Third-Party Service Assistance
+                </span>
+            </div>
+            <div class="top-bar-right">
+                <a href="tel:8445219878" class="top-bar-phone">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                        <path d="M22 16.92V19.92C22 20.4696 21.5523 20.9173 21.0027 20.9201C18.7583 20.9408 16.5521 20.3357 14.5921 19.1659C12.7579 18.0818 11.1809 16.6041 10 14.8501C8.8191 13.0961 7.91505 11.1082 7.36005 9C7.11005 8.1818 7.00505 7.3636 7.00005 6.5455C6.99505 6.0055 7.44505 5.5555 8.00005 5.5555H11.0001C11.5501 5.5555 12.0001 6.0055 12.0001 6.5555C12.0001 7.3682 12.1301 8.1809 12.3901 8.9936C12.5201 9.3936 12.4001 9.8436 12.0801 10.1236L10.7201 11.4836C11.5801 13.1236 13.1201 14.6636 14.7601 15.5236L16.1201 14.1636C16.4001 13.8836 16.8501 13.7636 17.2501 13.8936C18.1301 14.1536 18.9701 14.2836 19.8101 14.2836C20.3601 14.2836 20.8101 14.7336 20.8101 15.2836V18.2836C20.8101 18.5586 20.7001 18.8336 20.5101 19.0236C20.3201 19.2136 20.0601 19.3236 19.7901 19.3236L22 16.92Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    (844) 521-9878
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L3 7V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V7L12 2Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="logo-text">SkyLink Broadband</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="why-us.html">Why Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <a href="tel:8445219878" class="nav-cta">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M22 16.92V19.92C22 20.4696 21.5523 20.9173 21.0027 20.9201C18.7583 20.9408 16.5521 20.3357 14.5921 19.1659C12.7579 18.0818 11.1809 16.6041 10 14.8501C8.8191 13.0961 7.91505 11.1082 7.36005 9C7.11005 8.1818 7.00505 7.3636 7.00005 6.5455C6.99505 6.0055 7.44505 5.5555 8.00005 5.5555H11.0001C11.5501 5.5555 12.0001 6.0055 12.0001 6.5555C12.0001 7.3682 12.1301 8.1809 12.3901 8.9936C12.5201 9.3936 12.4001 9.8436 12.0801 10.1236L10.7201 11.4836C11.5801 13.1236 13.1201 14.6636 14.7601 15.5236L16.1201 14.1636C16.4001 13.8836 16.8501 13.7636 17.2501 13.8936C18.1301 14.1536 18.9701 14.2836 19.8101 14.2836C20.3601 14.2836 20.8101 14.7336 20.8101 15.2836V18.2836C20.8101 18.5586 20.7001 18.8336 20.5101 19.0236C20.3201 19.2136 20.0601 19.3236 19.7901 19.3236L22 16.92Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>CALL NOW</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="min-height: 60vh; padding-top: 180px;">
+        <div class="hero-background"></div>
+        <div class="hero-container" style="grid-template-columns: 1fr;">
+            <div class="hero-content" style="text-align: center;">
+                <span class="overline">Get In Touch</span>
+                <h1 class="hero-headline">
+                    Contact<br>
+                    <span class="gold-text">ServiceLine</span>
+                </h1>
+                <p class="hero-subtext" style="max-width: 700px; margin: 0 auto;">
+                    Need assistance with your internet or cable? Reach out to our independent support team for guidance.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="problem-stack">
+        <div class="container">
+            <div class="section-header" data-scroll-reveal style="margin-bottom: 48px;">
+                <span class="section-overline">Multiple Ways to Connect</span>
+                <h2 class="section-title">How Can We Help You?</h2>
+                <p class="section-description">Choose the best way to reach our support team</p>
+            </div>
+            <div class="contact-grid">
+                <!-- Contact Methods -->
+                <div class="contact-info">
+                    <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=800&q=80" alt="Contact support" class="contact-hero-image">
+                    <h2 style="font-size: 2rem; margin-bottom: 32px;">Get Support</h2>
+                    
+                    <div class="contact-method">
+                        <div class="contact-method-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 16.92V19.92C22 20.4696 21.5523 20.9173 21.0027 20.9201C18.7583 20.9408 16.5521 20.3357 14.5921 19.1659C12.7579 18.0818 11.1809 16.6041 10 14.8501C8.8191 13.0961 7.91505 11.1082 7.36005 9C7.11005 8.1818 7.00505 7.3636 7.00005 6.5455C6.99505 6.0055 7.44505 5.5555 8.00005 5.5555H11.0001C11.5501 5.5555 12.0001 6.0055 12.0001 6.5555C12.0001 7.3682 12.1301 8.1809 12.3901 8.9936C12.5201 9.3936 12.4001 9.8436 12.0801 10.1236L10.7201 11.4836C11.5801 13.1236 13.1201 14.6636 14.7601 15.5236L16.1201 14.1636C16.4001 13.8836 16.8501 13.7636 17.2501 13.8936C18.1301 14.1536 18.9701 14.2836 19.8101 14.2836C20.3601 14.2836 20.8101 14.7336 20.8101 15.2836V18.2836C20.8101 18.5586 20.7001 18.8336 20.5101 19.0236C20.3201 19.2136 20.0601 19.3236 19.7901 19.3236L22 16.92Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>Call for Assistance</h3>
+                        <p>Speak directly with a service assistance agent for assistance with your internet or cable questions.</p>
+                        <a href="tel:8445219878">(844) 521-9878</a>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-method-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                                <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M3 8L12 13L21 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p>Send us a message for general inquiries or non-urgent questions. We'll respond as soon as possible.</p>
+                        <a href="mailto:support@serviceline.com">support@serviceline.com</a>
+                    </div>
+
+                    <div style="margin-top: 40px;">
+                        <div class="compliance-notice">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L3 7V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V7L12 2Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <div>
+                                <p><strong>Important Disclosure:</strong></p>
+                                <p>SkyLink Broadband is an independent third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, cable, or telecom service provider.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <div class="contact-form">
+                        <h2 style="font-size: 2rem; margin-bottom: 24px;">Send Us a Message</h2>
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="technical">Technical Question</option>
+                                    <option value="billing">Billing Question</option>
+                                    <option value="refund">Refund Request</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">Send Message</button>
+                            
+                            <p class="form-disclaimer">
+                                For assistance with internet or cable issues, please call us at <a href="tel:8445219878" style="color: var(--gold-primary);">(844) 521-9878</a>.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="conversion-panel">
+        <div class="container">
+            <div class="conversion-content" data-scroll-reveal>
+                <h2>Need Help Today?</h2>
+                <p>Speak with an independent third-party advisor for informational support.</p>
+                <button class="mega-cta" onclick="openCallModal()">
+                    <span class="mega-cta-text">CALL NOW</span>
+                    <span class="mega-cta-number">(844) 521-9878</span>
+                </button>
+                <p class="conversion-disclaimer">Independent third-party service assistance • Service fees apply</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>SkyLink Broadband</h3>
+                    <p>Independent third-party service assistance for internet and cable issues.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="why-us.html">Why Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="refund-policy.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:8445219878">(844) 521-9878</a></li>
+                        <li><a href="mailto:support@serviceline.com">support@serviceline.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                <p><strong>Important Disclosure:</strong> SkyLink Broadband is an independent third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, cable, or telecom service provider. We charge a separate service assistance fee for our guidance and support services.</p>
+            </div>
+            <div class="footer-legal">
+                <p>&copy; 2026 SkyLink Broadband. All rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="disclaimer.html">Disclaimer</a>
+                    <a href="privacy-policy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="floating-call-btn" onclick="openCallModal()" id="floatingCallBtn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M22 16.92V19.92C22 20.4696 21.5523 20.9173 21.0027 20.9201C18.7583 20.9408 16.5521 20.3357 14.5921 19.1659C12.7579 18.0818 11.1809 16.6041 10 14.8501C8.8191 13.0961 7.91505 11.1082 7.36005 9C7.11005 8.1818 7.00505 7.3636 7.00005 6.5455C6.99505 6.0055 7.44505 5.5555 8.00005 5.5555H11.0001C11.5501 5.5555 12.0001 6.0055 12.0001 6.5555C12.0001 7.3682 12.1301 8.1809 12.3901 8.9936C12.5201 9.3936 12.4001 9.8436 12.0801 10.1236L10.7201 11.4836C11.5801 13.1236 13.1201 14.6636 14.7601 15.5236L16.1201 14.1636C16.4001 13.8836 16.8501 13.7636 17.2501 13.8936C18.1301 14.1536 18.9701 14.2836 19.8101 14.2836C20.3601 14.2836 20.8101 14.7336 20.8101 15.2836V18.2836C20.8101 18.5586 20.7001 18.8336 20.5101 19.0236C20.3201 19.2136 20.0601 19.3236 19.7901 19.3236L22 16.92Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <div class="mobile-call-bar" id="mobileCallBar">
+        <a href="tel:8445219878" class="mobile-call-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M22 16.92V19.92C22 20.4696 21.5523 20.9173 21.0027 20.9201C18.7583 20.9408 16.5521 20.3357 14.5921 19.1659C12.7579 18.0818 11.1809 16.6041 10 14.8501C8.8191 13.0961 7.91505 11.1082 7.36005 9C7.11005 8.1818 7.00505 7.3636 7.00005 6.5455C6.99505 6.0055 7.44505 5.5555 8.00005 5.5555H11.0001C11.5501 5.5555 12.0001 6.0055 12.0001 6.5555C12.0001 7.3682 12.1301 8.1809 12.3901 8.9936C12.5201 9.3936 12.4001 9.8436 12.0801 10.1236L10.7201 11.4836C11.5801 13.1236 13.1201 14.6636 14.7601 15.5236L16.1201 14.1636C16.4001 13.8836 16.8501 13.7636 17.2501 13.8936C18.1301 14.1536 18.9701 14.2836 19.8101 14.2836C20.3601 14.2836 20.8101 14.7336 20.8101 15.2836V18.2836C20.8101 18.5586 20.7001 18.8336 20.5101 19.0236C20.3201 19.2136 20.0601 19.3236 19.7901 19.3236L22 16.92Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>CALL NOW: (844) 521-9878</span>
+        </a>
+    </div>
+
+    <div class="call-modal" id="callModal" onclick="closeCallModal(event)">
+        <div class="call-modal-content" onclick="event.stopPropagation()">
+            <button class="call-modal-close" onclick="closeCallModal()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="call-modal-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                    <path d="M22 16.92V19.92C22 20.4696 21.5523 20.9173 21.0027 20.9201C18.7583 20.9408 16.5521 20.3357 14.5921 19.1659C12.7579 18.0818 11.1809 16.6041 10 14.8501C8.8191 13.0961 7.91505 11.1082 7.36005 9C7.11005 8.1818 7.00505 7.3636 7.00005 6.5455C6.99505 6.0055 7.44505 5.5555 8.00005 5.5555H11.0001C11.5501 5.5555 12.0001 6.0055 12.0001 6.5555C12.0001 7.3682 12.1301 8.1809 12.3901 8.9936C12.5201 9.3936 12.4001 9.8436 12.0801 10.1236L10.7201 11.4836C11.5801 13.1236 13.1201 14.6636 14.7601 15.5236L16.1201 14.1636C16.4001 13.8836 16.8501 13.7636 17.2501 13.8936C18.1301 14.1536 18.9701 14.2836 19.8101 14.2836C20.3601 14.2836 20.8101 14.7336 20.8101 15.2836V18.2836C20.8101 18.5586 20.7001 18.8336 20.5101 19.0236C20.3201 19.2136 20.0601 19.3236 19.7901 19.3236L22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h3>Call for Assistance</h3>
+            <p>Speak with an independent service assistance agent now</p>
+            <a href="tel:8445219878" class="call-modal-number">(844) 521-9878</a>
+            <p class="call-modal-disclaimer">Independent third-party assistance • Service fees apply</p>
+        </div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">&times;</button>
+            <h2 class="popup-headline">Internet or Cable Not Working?</h2>
+            <p class="popup-subtext">Get instant help for slow internet, outages, setup issues, or cable problems.</p>
+            <div class="popup-phone">(844) 521-9878</div>
+            <button class="popup-cta-btn" onclick="window.location.href='tel:8445219878'">CALL NOW</button>
+            <p class="popup-trust-line">Quick assistance • No forms • Talk to a real agent</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        setTimeout(function() {
+            document.getElementById('popupOverlay').classList.add('active');
+        }, 5000);
+        function closePopup() {
+            document.getElementById('popupOverlay').classList.remove('active');
+        }
+        document.getElementById('popupOverlay').addEventListener('click', function(e) {
+            if (e.target === this) closePopup();
+        });
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            if (validateForm('contactForm')) {
+                // In production, this would send to a backend
+                alert('Thank you for your message! We\'ll get back to you as soon as possible.\n\nFor assistance, please call us at (844) 521-9878.');
+                document.getElementById('contactForm').reset();
+            }
+        }
+    </script>
+</body>
+</html>
